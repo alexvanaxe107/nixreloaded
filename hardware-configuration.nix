@@ -8,20 +8,10 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  networking.hostName = "persistence"; # Define your hostname.
-
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" "amdgpu" ];
-
-  boot.kernelModules = [ "kvm-intel" "i2c-dev" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
+  boot.initrd.kernelModules = [ "dm-snapshot" ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
-
-  services.udev.extraRules = ''
-        KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
-  '';
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/636a8fa1-c63c-4b83-a33b-b981d29fe090";
@@ -43,6 +33,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/home/media" =
+    { device = "/dev/disk/by-uuid/a4b98528-517f-46b7-be52-5f5ae6ca691b";
+      fsType = "ext4";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/ab2a5ec2-717f-47b8-b30e-e62d6ee5fc7e"; }
     ];
@@ -55,7 +50,6 @@
   # networking.interfaces.enp5s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.opengl.driSupport32Bit = true;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

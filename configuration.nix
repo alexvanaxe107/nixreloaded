@@ -11,7 +11,11 @@ in
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./local-configuration.nix
     ];
+
+  # Enable Flakes and the new command-line tool
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
@@ -167,7 +171,7 @@ in
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 8096 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
