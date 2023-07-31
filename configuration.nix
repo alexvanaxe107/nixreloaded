@@ -2,16 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, ... }:
+{ config, pkgs, nixunstable, ... }:
 
-let
-   unstable = import <unstable> {};
-in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./local-configuration.nix
+#      ./local-configuration.nix
     ];
 
   # Enable Flakes and the new command-line tool
@@ -124,7 +121,7 @@ in
      xorg.xbacklight
 
      # Installing the new version of the e2fsck
-     unstable.e2fsprogs
+     (import nixunstable {system = system;}).e2fsprogs
 
      # monitors
      lm_sensors
@@ -154,7 +151,7 @@ in
     jetbrains-mono
     (nerdfonts.override { fonts = [ "Iosevka" "NerdFontsSymbolsOnly" "CascadiaCode" ]; })
 
-    (import ./fonts.nix)
+    (import ./fonts.nix pkgs)
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

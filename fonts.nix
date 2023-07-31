@@ -1,10 +1,9 @@
-with import <nixpkgs> {}; # bring all of Nixpkgs into scope
-
-stdenvNoCC.mkDerivation rec {
+{pkgs, ...}:
+pkgs.stdenvNoCC.mkDerivation rec {
   pname = "ava-fonts";
   version = "1.003";
 
-  src = fetchzip {
+  src = pkgs.fetchzip {
     url = "https://github.com/alexvanaxe107/fonts/archive/master.zip";
     hash = "sha256-A3QlSHNAMOf1wW8PUb9XqnIeYslkpa0mu9NNgJi5Iv8=";
   };
@@ -18,7 +17,7 @@ stdenvNoCC.mkDerivation rec {
     runHook postInstall
   '';
 
-  meta = with lib; {
+  meta = with pkgs.lib; {
     description = "A typeface designed for source code";
     longDescription = ''
       Hack is hand groomed and optically balanced to be a workhorse face for
@@ -42,3 +41,4 @@ stdenvNoCC.mkDerivation rec {
     platforms = platforms.all;
   };
 }
+

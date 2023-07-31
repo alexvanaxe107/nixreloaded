@@ -13,6 +13,7 @@
 
     # Official NixOS package source, using nixos-unstable branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixunstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";
@@ -49,6 +50,10 @@
       #   sudo nixos-rebuild switch --flake .#nixos-test
       "persistence" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	
+        # Here we add the unstable, so we can install the appropriate fs file
+	# to run the system.
+        #specialArgs = { inherit nixunstable; };
 
         # The Nix module system can modularize configuration,
         # improving the maintainability of configuration.
@@ -84,12 +89,13 @@
         # If you need to pass other parameters,
         # you must use `specialArgs` by uncomment the following line:
         #
-        # specialArgs = {...}  # pass custom arguments into all sub module.
+        specialArgs = inputs;  # pass custom arguments into all sub module.
         modules = [
           # Import the configuration.nix here, so that the
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nix Module,
           ./configuration.nix
+	  ./stlourence.nix
         ];
       };
     };
