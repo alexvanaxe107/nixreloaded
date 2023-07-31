@@ -11,37 +11,27 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d5bd703b-7cb2-403e-a3e8-bc92041f0e20";
+    { device = "/dev/disk/by-uuid/7dff6740-1990-46ab-97d0-65aa72c8b2c7";
+      fsType = "ext4";
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/c3c224fd-6574-4b25-9be1-91636e97d63f";
+      fsType = "ext4";
+    };
+
+  fileSystems."/home/Documents" =
+    { device = "/dev/disk/by-uuid/f759a03f-e45b-4a24-8299-ff7b1a36258d";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/9431-4B9D";
+    { device = "/dev/disk/by-uuid/A236-0F99";
       fsType = "vfat";
     };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/01d94918-0f02-40c2-af54-449deb63981c";
-      fsType = "ext4";
-    };
-
-  fileSystems."/home/alexvanaxe/Documents" =
-    { device = "/dev/disk/by-uuid/ac0d76d3-3f2e-4d2e-8d31-bab312e8b915";
-      fsType = "ext4";
-    };
-
-  fileSystems."/home/media" =
-    { device = "/dev/disk/by-uuid/effd668b-b6b0-43a8-91dc-94ce2de09970";
-      fsType = "ext4";
-    };
-
-  fileSystems."/home/games" =
-    { device = "/dev/disk/by-uuid/c7f4bb26-7bf6-40ad-8597-1ca6e278cad2";
-      fsType = "ext4";
-    };
-
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/7f3db2a6-48ef-424c-a7ee-a2e3e97af490"; }
+    [ { device = "/dev/disk/by-uuid/aa818cf0-1de4-4bc3-9799-765da04f6b21"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -49,7 +39,8 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp5s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

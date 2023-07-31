@@ -95,7 +95,7 @@
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nix Module,
           ./configuration.nix
-	  ./stlourence/stlourence.nix
+	  ./stlourence/local-configs.nix
 	  ./stlourence/hardware-configuration.nix
         ];
       };
@@ -109,10 +109,24 @@
           # Note: configuration.nix itself is also a Nix Module,
           ./configuration.nix
 	  ./deskrio/arch.nix
-	  ./stlourence/hardware-configuration.nix
+	  ./deskrio/local-configs.nix
+	  ./deskrio/hardware-configuration.nix
         ];
       };
 
+      "NoteName" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+	
+        specialArgs = inputs;  # pass custom arguments into all sub module.
+        modules = [
+          # Import the configuration.nix here, so that the
+          # old configuration file can still take effect.
+          # Note: configuration.nix itself is also a Nix Module,
+          ./configuration.nix
+	  ./note/hardware-configuration.nix
+	  ./note/local-configs.nix
+        ];
+      };
 
 
 
