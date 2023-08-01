@@ -94,9 +94,9 @@
           # Import the configuration.nix here, so that the
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nix Module,
-          ./configuration.nix
-	  ./stlourence/local-configs.nix
 	  ./stlourence/hardware-configuration.nix
+	  ./stlourence/local-configs.nix
+          ./configuration.nix
         ];
       };
       "Jason" = nixpkgs.lib.nixosSystem {
@@ -107,10 +107,10 @@
           # Import the configuration.nix here, so that the
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nix Module,
-          ./configuration.nix
 	  ./deskrio/arch.nix
 	  ./deskrio/local-configs.nix
 	  ./deskrio/hardware-configuration.nix
+          ./configuration.nix
         ];
       };
 
@@ -122,9 +122,9 @@
           # Import the configuration.nix here, so that the
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nix Module,
-          ./configuration.nix
 	  ./note/hardware-configuration.nix
 	  ./note/local-configs.nix
+          ./configuration.nix
         ];
       };
 
