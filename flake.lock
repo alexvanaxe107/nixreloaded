@@ -1,23 +1,21 @@
 {
   "nodes": {
-    "home-manager": {
+    "avafonts": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1687871164,
-        "narHash": "sha256-bBFlPthuYX322xOlpJvkjUBz0C+MOBjZdDOOJJ+G2jU=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "07c347bb50994691d7b0095f45ebd8838cf6bc38",
+        "lastModified": 1690815549,
+        "narHash": "sha256-D/LIh5qSYseBFM1/Slu+NUIA2Sw7econZuupzSAEFEw=",
+        "owner": "alexvanaxe107",
+        "repo": "fonts",
+        "rev": "a1ee6fac0f0636569b118a3cf2b67d05e107e87e",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
-        "ref": "release-23.05",
-        "repo": "home-manager",
+        "owner": "alexvanaxe107",
+        "ref": "master",
+        "repo": "fonts",
         "type": "github"
       }
     },
@@ -33,6 +31,22 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-23.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1688392541,
+        "narHash": "sha256-lHrKvEkCPTUO+7tPfjIcb7Trk6k31rz18vkyqmkeJfY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ea4c80b39be4c09702b0cb3b42eab59e2ba4f24b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-22.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -55,8 +69,8 @@
     },
     "root": {
       "inputs": {
-        "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
+        "avafonts": "avafonts",
+        "nixpkgs": "nixpkgs_2",
         "nixunstable": "nixunstable"
       }
     }
