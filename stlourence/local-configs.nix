@@ -6,11 +6,6 @@
 {
   networking.hostName = "persistence"; # Define your hostname.
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" "amdgpu" ];
-
-  boot.kernelModules = [ "kvm-intel" "i2c-dev" ];
-
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
 
@@ -18,5 +13,4 @@
         KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
   '';
 
-  hardware.opengl.driSupport32Bit = true;
 }
