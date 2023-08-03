@@ -108,10 +108,10 @@
           # Import the configuration.nix here, so that the
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nix Module,
-          ./configuration.nix
 	  ./deskrio/arch.nix
 	  ./deskrio/hardware-configuration.nix
 	  ./deskrio/local-configs.nix
+          ./configuration.nix
         ];
       };
 
