@@ -92,6 +92,16 @@
      ];
    };
 
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+   users.users.alexworkaxe = {
+     uid=1002;
+     isNormalUser = true;
+     extraGroups = [ "wheel" "video" "i2c" ]; # Enable ‘sudo’ for the user.
+     packages = with pkgs; [
+
+     ];
+   };
+
   programs.light.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -110,6 +120,8 @@
      git
      firefox
      pavucontrol
+
+     xorg.xhost
 
      # Helpers
     tldr

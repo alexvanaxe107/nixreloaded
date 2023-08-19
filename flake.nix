@@ -109,8 +109,8 @@
           # old configuration file can still take effect.
           # Note: configuration.nix itself is also a Nix Module,
 	  ./deskrio/arch.nix
-	  ./deskrio/local-configs.nix
 	  ./deskrio/hardware-configuration.nix
+	  ./deskrio/local-configs.nix
           ./configuration.nix
         ];
       };
