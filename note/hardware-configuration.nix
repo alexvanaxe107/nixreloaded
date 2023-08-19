@@ -7,31 +7,38 @@
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
-
   boot.extraModulePackages = [ ];
 
+  services.udev.extraRules = ''
+        KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
+  '';
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/7dff6740-1990-46ab-97d0-65aa72c8b2c7";
+    { device = "/dev/disk/by-uuid/00524494-fb43-40c8-a6ad-a16b6dd8e35e";
       fsType = "ext4";
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/c3c224fd-6574-4b25-9be1-91636e97d63f";
+    { device = "/dev/disk/by-uuid/0d6bf69b-6edf-41b3-b614-625959309b85";
       fsType = "ext4";
     };
 
-  fileSystems."/home/Documents" =
-    { device = "/dev/disk/by-uuid/f759a03f-e45b-4a24-8299-ff7b1a36258d";
+  fileSystems."/home/alexvanaxe/Documents" =
+    { device = "/dev/disk/by-uuid/1b3e4b57-0bdc-4a78-bb60-78200c0858c6";
+      fsType = "ext4";
+    };
+
+  fileSystems."/home/media" =
+    { device = "/dev/disk/by-uuid/d1b6b1b3-c061-4222-bade-424a702118b0";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/A236-0F99";
+    { device = "/dev/disk/by-uuid/263E-CD1F";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/aa818cf0-1de4-4bc3-9799-765da04f6b21"; }
+    [ { device = "/dev/disk/by-uuid/b5a4b0b0-abf4-4b2e-bfc1-76903a4676f7"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

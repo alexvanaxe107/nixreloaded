@@ -115,7 +115,7 @@
         ];
       };
 
-      "NoteName" = nixpkgs.lib.nixosSystem {
+      "palauai" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 	
         specialArgs = inputs;  # pass custom arguments into all sub module.
