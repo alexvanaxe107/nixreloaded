@@ -159,7 +159,7 @@
     hermit
     mononoki
     overpass
-    terminus_font
+    terminus-font-ttf
     orbitron
 
     jetbrains-mono
