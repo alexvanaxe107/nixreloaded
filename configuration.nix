@@ -122,6 +122,7 @@
      git
      firefox
      pavucontrol
+     file
 
      xorg.xhost
 
