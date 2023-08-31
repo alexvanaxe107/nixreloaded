@@ -62,6 +62,8 @@
   # Enable pipewire instead of pulseaudio
   services.pipewire = {
     enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
     pulse.enable = true;
   };
 
@@ -120,6 +122,7 @@
      git
      firefox
      pavucontrol
+     file
 
      xorg.xhost
 
@@ -157,7 +160,7 @@
     hermit
     mononoki
     overpass
-    terminus_font
+    terminus_font_ttf
     orbitron
 
     jetbrains-mono
