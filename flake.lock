@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1693069435,
-        "narHash": "sha256-IIUsLcD6tdR2BxF2q1wzTR4DpJj8QZvm8qGj76b/QmQ=",
+        "lastModified": 1693945793,
+        "narHash": "sha256-8QBjp124XoWI1VPHNYEflrDYQ6XAM2gNJDp3s0/kl6Y=",
         "owner": "alexvanaxe107",
         "repo": "fonts",
-        "rev": "9a3f4776492c5390bcb604a472ece3415f3a3e48",
+        "rev": "e8ec7b12b36fde671f9cd6d4df99ccfa07e72b41",
         "type": "github"
       },
       "original": {
@@ -21,10 +21,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1692986144,
-        "narHash": "sha256-M4VFpy7Av9j+33HF5nIGm0k2+DXXW4qSSKdidIKg5jY=",
-        "path": "/nix/store/015zqyhjvcd4zx1yci1wk4g0h25zg96w-source",
-        "rev": "74e5bdc5478ebbe7ba5849f0d765f92757bb9dbf",
+        "lastModified": 1693771906,
+        "narHash": "sha256-32EnPCaVjOiEERZ+o/2Ir7JH9pkfwJZJ27SKHNvt4yk=",
+        "path": "/nix/store/p9pbggajq6ykf2jdgsl33rw081mj68z4-source",
+        "rev": "da5adce0ffaff10f6d0fee72a02a5ed9d01b52fc",
         "type": "path"
       },
       "original": {
