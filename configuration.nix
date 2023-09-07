@@ -67,6 +67,12 @@
     pulse.enable = true;
   };
 
+  services.clight = {
+    enable = true;
+  };
+  location.latitude = -22.10;
+  location.longitude = -45.03;
+
   security.rtkit.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -110,6 +116,7 @@
    environment.systemPackages = with pkgs; [
      # Desktops apps
      light
+     clight
      # Control the monitor
      ddcutil
 
