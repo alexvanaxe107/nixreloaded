@@ -171,6 +171,7 @@
     orbitron
 
     jetbrains-mono
+    source-code-pro
     (nerdfonts.override { fonts = [ "Iosevka" "NerdFontsSymbolsOnly" "CascadiaCode" ]; })
 
     avafonts.defaultPackage.${system}
@@ -190,7 +191,7 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8096 8000 ];
+  networking.firewall.allowedTCPPorts = [ 8096 8000 5555 ];
   networking.nameservers = [ "208.67.222.222" "208.67.220.220" ];
   services.resolved.enable = false;
   networking.networkmanager.dns = "none";
