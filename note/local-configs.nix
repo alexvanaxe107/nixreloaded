@@ -16,8 +16,8 @@
 
   services.xserver.enable = true;
   services.xserver.libinput.enable = true;
-  services.xserver.libinput.clickMethod = "clickfinger";
-  services.xserver.libinput.tapping = false;
+  services.xserver.libinput.touchpad.clickMethod = "clickfinger";
+  services.xserver.libinput.touchpad.tapping = false;
 
   services.udev.extraRules = ''
         KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
