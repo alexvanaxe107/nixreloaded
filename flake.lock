@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1698239172,
-        "narHash": "sha256-qC2dMvuVv0s7TIhg4VQEE6P8V4f9VDbtVwrh1Y5ox2Y=",
+        "lastModified": 1698879672,
+        "narHash": "sha256-Uc4XLw7VUb3pH1QoKh1/uDFCvxgO9ENx1hzlv5/dsSE=",
         "owner": "alexvanaxe107",
         "repo": "fonts",
-        "rev": "6f1358aa1e1a2fd673f51640170a3e11a4084170",
+        "rev": "1e1c040dc8e60904812f188660d1ea24f0c11552",
         "type": "github"
       },
       "original": {
