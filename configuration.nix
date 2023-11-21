@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, nixunstable, avafonts, ... }:
+{ config, pkgs, nixunstable,  ... }:
 
 {
   imports =
@@ -173,8 +173,6 @@
     jetbrains-mono
     source-code-pro
     (nerdfonts.override { fonts = [ "Iosevka" "NerdFontsSymbolsOnly" "CascadiaCode" ]; })
-
-    avafonts.defaultPackage.${system}
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

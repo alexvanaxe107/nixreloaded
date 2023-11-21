@@ -1,38 +1,6 @@
 {
   "nodes": {
-    "avafonts": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "lastModified": 1698879672,
-        "narHash": "sha256-Uc4XLw7VUb3pH1QoKh1/uDFCvxgO9ENx1hzlv5/dsSE=",
-        "owner": "alexvanaxe107",
-        "repo": "fonts",
-        "rev": "1e1c040dc8e60904812f188660d1ea24f0c11552",
-        "type": "github"
-      },
-      "original": {
-        "owner": "alexvanaxe107",
-        "ref": "master",
-        "repo": "fonts",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
-      "locked": {
-        "lastModified": 1697851979,
-        "narHash": "sha256-lJ8k4qkkwdvi+t/Xc6Fn74kUuobpu9ynPGxNZR6OwoA=",
-        "path": "/nix/store/s02jdlqmv902b0y19jy4kybl86ylwvvy-source",
-        "rev": "5550a85a087c04ddcace7f892b0bdc9d8bb080c8",
-        "type": "path"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
       "locked": {
         "lastModified": 1697851979,
         "narHash": "sha256-lJ8k4qkkwdvi+t/Xc6Fn74kUuobpu9ynPGxNZR6OwoA=",
@@ -66,8 +34,7 @@
     },
     "root": {
       "inputs": {
-        "avafonts": "avafonts",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "nixunstable": "nixunstable"
       }
     }

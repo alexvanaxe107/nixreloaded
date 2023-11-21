@@ -14,7 +14,6 @@
     # Official NixOS package source, using nixos-unstable branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     nixunstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    avafonts.url = "github:alexvanaxe107/fonts/master";
     # home-manager, used for managing user configuration
 #    home-manager = {
 #      url = "github:nix-community/home-manager/release-23.05";
